@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOS_Koor_Bulb" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,42 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bulboff" translatesAutoresizingMaskIntoConstraints="NO" id="T2b-pH-3y9">
+                                <rect key="frame" x="93" y="182" width="188" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="Atw-yM-HxD"/>
+                                    <constraint firstAttribute="height" constant="160" id="rIK-rw-DdV"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gu4-C5-mz7">
+                                <rect key="frame" x="157" y="418" width="61" height="30"/>
+                                <state key="normal" title="Turn On"/>
+                                <connections>
+                                    <action selector="_switch_bulb_action:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YPy-jh-k1F"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="T2b-pH-3y9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="77" id="IIW-zV-wed"/>
+                            <constraint firstItem="T2b-pH-3y9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="162" id="Kl1-A1-rzH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T2b-pH-3y9" secondAttribute="trailing" constant="78" id="QbI-cO-Ah8"/>
+                            <constraint firstItem="gu4-C5-mz7" firstAttribute="top" secondItem="T2b-pH-3y9" secondAttribute="bottom" constant="88" id="hv1-tc-prw"/>
+                            <constraint firstItem="gu4-C5-mz7" firstAttribute="centerX" secondItem="T2b-pH-3y9" secondAttribute="centerX" id="vu2-IW-ma7"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="_image_bulb" destination="T2b-pH-3y9" id="z51-54-GX5"/>
+                        <outlet property="_switch_bulb" destination="gu4-C5-mz7" id="A5z-c4-izR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bulboff" width="300" height="300"/>
+    </resources>
 </document>
